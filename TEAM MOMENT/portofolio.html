@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moment - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .custom-gradient { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
+    </style>
+</head>
+<body class="bg-gray-50 flex min-h-screen">
+    <aside id="sidebar" class="w-64 bg-white border-r p-6 hidden md:block"></aside>
+
+    <main class="flex-1 p-8">
+        <div class="max-w-4xl mx-auto">
+            <div class="flex justify-between items-center mb-8">
+                <h1 class="text-3xl font-bold">My Portfolio</h1>
+                <button class="bg-white border-2 border-dashed border-gray-300 px-6 py-2 rounded-xl flex items-center gap-2 hover:bg-gray-50 transition">
+                    <i class="fa-solid fa-plus"></i> Upload File
+                </button>
+            </div>
+
+            <div class="custom-gradient w-full h-48 rounded-3xl p-8 text-white relative overflow-hidden mb-12 shadow-xl">
+                <h2 class="text-2xl font-black tracking-tighter uppercase leading-none">Web<br>Development</h2>
+                <div class="absolute bottom-0 right-0 opacity-10 text-9xl font-bold -mb-8 -mr-4">DEV</div>
+            </div>
+
+            <h2 class="text-2xl font-bold mb-6">Availability</h2>
+            <div class="bg-white rounded-2xl border overflow-hidden shadow-sm">
+                <table class="w-full text-left">
+                    <thead class="bg-gray-50 text-gray-400 text-xs uppercase font-bold">
+                        <tr>
+                            <th class="px-6 py-4">Name</th>
+                            <th class="px-6 py-4 text-center">Create</th>
+                            <th class="px-6 py-4 text-center">Update</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y">
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 font-medium">William Ford</td>
+                            <td class="px-6 py-4 text-center">
+                                <input type="checkbox" checked class="w-5 h-5 accent-blue-600 rounded">
+                            </td>
+                            <td class="px-6 py-4 text-center">
+                                <input type="checkbox" checked class="w-5 h-5 accent-blue-600 rounded">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

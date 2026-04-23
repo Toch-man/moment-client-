@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Professional - Manage Bookings</title>
+    <link rel="stylesheet" href="booking.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Moment</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for Projects, tasks, payments...">
+            <button class="search-btn"><img src="search-icon.png" alt="Search"></button>
+        </div>
+        <button class="add-tasks-btn">Add New Tasks</button>
+    </header>
+
+    <main class="container">
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="/TEAM MOMENT/MoM Images/img1.png" alt="Profile Picture" class="profile-pic">
+                <h3>Stanley Anderson</h3>
+                <p>stanley.a@email.com</p>
+            </div>
+
+            <div class="nav-links">
+                <nav>
+                <ul>
+                    <li><a href="#" class="cta-btn">My Projects</a></li>
+                    <li><a href="#" class="btn">My Dashboard</a></li>
+                    <li><a href="#" class="btn active">Booking requests</a></li>
+                    <li><a href="#" class="btn">Accepted bookings</a></li>
+                    <li><a href="#" class="btn">Calendar view</a></li>
+                    <li><a href="#" class="btn">New requests</a></li>
+                    <li><a href="#" class="btn">Performance stats</a></li>
+                </ul>
+            </nav>
+            </div>
+            
+            <a href="#" class="log-out-btn">Log out</a>
+            <div class="privacy-links">
+                <a href="#">Privacy</a> | <a href="#">Terms</a> | <a href="#">Cookies</a> | <a href="#">Accessibility</a>
+            </div>
+        </aside>
+
+        <section class="content">
+            <h2>Booking requests</h2>
+            <div class="requests-grid">
+                <!-- Example of a single booking request card -->
+                <div class="booking-card">
+                    <div class="card-header">
+                        <img src="user-icon.png" alt="User" class="user-icon">
+                        <div class="request-details">
+                            <h4>Mark Stanley</h4>
+                            <p>Client at <strong>Website Chunking/ Backend Authentication</strong></p>
+                        </div>
+                        <span class="status-tag pending">Pending</span>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Time:</strong> 11:09 EST</p>
+                        <p><strong>Project Type:</strong> Fully Remote</p>
+                        <p><strong>Date:</strong> 01 August, 2026</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn-secondary">View Full Guideline</button>
+                        <button class="btn-primary">Follow up</button>
+                    </div>
+                </div>
+
+                <!-- Add more booking cards here -->
+                <div class="booking-card">
+                    <div class="card-header">
+                        <img src="user-icon.png" alt="User" class="user-icon">
+                        <div class="request-details">
+                            <h4>Mark Stanley</h4>
+                            <p>Client at <strong>Website Chunking/ Backend Authentication</strong></p>
+                        </div>
+                        <span class="status-tag accepted">Accepted</span>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Time:</strong> 11:09 EST</p>
+                        <p><strong>Project Type:</strong> Fully Remote</p>
+                        <p><strong>Date:</strong> 01 August, 2026</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn-secondary">View Full Guideline</button>
+                        <button class="btn-primary">Follow up</button>
+                    </div>
+                </div>
+
+                <div class="booking-card">
+                    <div class="card-header">
+                        <img src="user-icon.png" alt="User" class="user-icon">
+                        <div class="request-details">
+                            <h4>Mark Stanley</h4>
+                            <p>Client at <strong>Website Chunking/ Backend Authentication</strong></p>
+                        </div>
+                        <span class="status-tag declined">Declined</span>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Time:</strong> 11:09 EST</p>
+                        <p><strong>Project Type:</strong> Fully Remote</p>
+                        <p><strong>Date:</strong> 01 August, 2026</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn-secondary">View Full Guideline</button>
+                        <button class="btn-primary">Follow up</button>
+                    </div>
+                </div>
+
+                <div class="booking-card">
+                    <div class="card-header">
+                        <img src="user-icon.png" alt="User" class="user-icon">
+                        <div class="request-details">
+                            <h4>Mark Stanley</h4>
+                            <p>Client at <strong>Website Chunking/ Backend Authentication</strong></p>
+                        </div>
+                        <span class="status-tag declined">Pending</span>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Time:</strong> 11:09 EST</p>
+                        <p><strong>Project Type:</strong> Fully Remote</p>
+                        <p><strong>Date:</strong> 01 August, 2026</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn-secondary">View Full Guideline</button>
+                        <button class="btn-primary">Follow up</button>
+                    </div>
+                </div>
+
+                
+                 <!-- Repeat for other booking requests -->
+            </div>
+
+            <div class="accepted-bookings-section">
+                <div class="section-header">
+                    <h2>Accepted bookings</h2>
+                    <a href="#" class="see-history-link">See History ></a>
+                </div>
+                <div class="accepted-bookings-grid">
+                    <div class="accepted-card">
+                        <img src="project-thumbnail.png" alt="Project Thumbnail">
+                        <div class="accepted-card-info">
+                            <h4>Project Title</h4>
+                            <p>Client Name</p>
+                        </div>
+                    </div>
+
+                    <div class="accepted-bookings-grid">
+                    <div class="accepted-card">
+                        <img src="project-thumbnail.png" alt="Project Thumbnail">
+                        <div class="accepted-card-info">
+                            <h4>Project Title</h4>
+                            <p>Client Name</p>
+                        </div>
+                    </div>
+
+                    <div class="accepted-bookings-grid">
+                    <div class="accepted-card">
+                        <img src="project-thumbnail.png" alt="Project Thumbnail">
+                        <div class="accepted-card-info">
+                            <h4>Project Title</h4>
+                            <p>Client Name</p>
+                        </div>
+                    </div>
+
+                    <div class="accepted-bookings-grid">
+                    <div class="accepted-card">
+                        <img src="project-thumbnail.png" alt="Project Thumbnail">
+                        <div class="accepted-card-info">
+                            <h4>Project Title</h4>
+                            <p>Client Name</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Add more accepted booking cards -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <footer>
+        <p>© 2023 Moment. All rights reserved.</p>
+    </footer>
+
+    <script src="booking.js"></script>
+</body>
+</html>

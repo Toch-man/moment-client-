@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Moment Professional Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/TEAM MOMENT/MoM.css"/>
+</head>
+<body>
+
+  <!-- TOAST CONTAINER -->
+  <div id="toast-container"></div>
+
+  <!-- HEADER -->
+  <header class="topbar">
+    <div class="logo" onclick="showPanel('home')">
+      <span class="logo-icon"></span> Moment
+    </div>
+
+    <div class="search-wrap">
+      <input type="text" id="search-input" class="search-input" placeholder="Search for Professional Dashboard..." oninput="handleSearch(this.value)" autocomplete="off"/>
+      <div id="search-dropdown" class="search-dropdown hidden"></div>
+    </div>
+
+    <div class="topbar-actions">
+      <button class="icon-btn" onclick="showToast('Use the search bar to find sections','info')"><i class="info-icon"></i></button>
+      
+      <button class="btn-primary" onclick="openAddTaskModal()"> Add New Tasks</button>
+      <div class="avatar-btn" onclick="openProfileModal()"></div>
+    </div>
+  </header>
+
+  <div class="app-body">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-dots">
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <span class="brand-label">My Dashboard</span>
+      </div>
+
+      <button class="nav-btn active" data-panel="home" onclick="setNav(this,'home')">
+       My Projects
+      </button>
+      <button class="nav-btn" data-panel="bookings" onclick="setNav(this,'bookings')">
+        <span></span><span class="nav-label">Upcoming bookings</span>
+      </button>
+      <button class="nav-btn" data-panel="revenue" onclick="setNav(this,'revenue')">
+        <span></span><span class="nav-label">Revenue summary</span>
+      </button>
+      <button class="nav-btn" data-panel="messages" onclick="setNav(this,'messages')">
+        <span></span><span class="nav-label">Messages</span>
+        <span class="badge">3</span>
+      </button>
+      <button class="nav-btn" data-panel="requests" onclick="setNav(this,'requests')">
+        <span></span><span class="nav-label">New requests</span>
+        <span class="badge">7</span>
+      </button>
+      <button class="nav-btn" data-panel="stats" onclick="setNav(this,'stats')">
+        <span></span><span class="nav-label">Performance stats</span>
+      </button>
+      <button class="nav-btn" data-panel="tasks" onclick="setNav(this,'tasks')">
+        <span></span><span class="nav-label">Task Lists</span>
+      </button>
+      <button class="nav-btn" data-panel="packages" onclick="setNav(this,'packages')">
+        <span></span><span class="nav-label">Packages</span>
+      </button>
+      <button class="nav-btn" data-panel="calendar" onclick="setNav(this,'calendar')">
+        <span></span><span class="nav-label">Availability calendar</span>
+      </button>
+      <button class="nav-btn" data-panel="payments" onclick="setNav(this,'payments')">
+        <span></span><span class="nav-label">Payment history</span>
+      </button>
+
+      <div class="sidebar-spacer"></div>
+
+      <div class="upgrade-card" id="upgrade-card">
+        <button class="upgrade-close" onclick="document.getElementById('upgrade-card').remove()"></button>
+        <div class="upgrade-emoji"></div>
+        <p>Upgrade for PRO to be more visible and gain more Gigs</p>
+        <button class="btn-primary w-full" onclick="showToast('Redirecting to PRO upgrade! \ud83d\ude80','success')">Upgrade Now</button>
+      </div>
+
+      <div class="sidebar-footer">
+        <span onclick="showToast('Opening Privacy','info')">Privacy</span>
+        <span onclick="showToast('Opening Terms','info')">Terms</span>
+        <span onclick="showToast('Opening Cookies','info')">Cookies</span>
+        <span onclick="showToast('Opening Accessibility','info')">Accessibility</span>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content" id="main-content">
+
+      <!-- HOME PANEL -->
+      <div id="panel-home" class="panel active">
+
+        <div class="two-col-layout">
+          <div class="center-col">
+
+            <!-- PROFILE CARD -->
+            <div class="profile-card">
+              <div class="profile-banner" onclick="showToast('Banner customization coming soon!','info')">
+              </div>
+              <div class="profile-body">
+                <div class="profile-avatar">
+                  <img src="/TEAM MOMENT/image.png" class="rounded-full h-full w-full object-cover">
+
+                </div>
+                <div class="profile-info-row">
+                  <div class="profile-info">
+                    <h2 id="profile-greeting">Hello Abigail,</h2>
+                    <p class="profile-sub">A creative Designer/Web Developer</p>
+                    <p class="profile-loc">Los Angells, California</p>
+                    <div class="skill-tags">
+                      <span class="skill-tag" onclick="showToast('Skill: UI Design','info')">UI Design</span>
+                      <span class="skill-tag" onclick="showToast('Skill: HTML','info')">HTML</span>
+                      <span class="skill-tag" onclick="showToast('Skill: CSS','info')">CSS</span>
+                      <span class="skill-tag" onclick="showToast('Skill: JavaScript','info')">JavaScript</span>
+                    </div>
+                  </div>
+                  <div class="profile-actions">
+                    <button class="btn-outline" id="star-btn" onclick="toggleStar()">Skills</button>
+                    <button class="btn-icon" onclick="openEditProfileModal()"></button>
+                    <button class="btn-icon" onclick="showToast('Settings opened','info')"></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- WORK EXPERIENCE -->
+            <div class="section">
+              <div class="section-header">
+                <h3>Work Experiences</h3>
+                <button class="btn-soft" onclick="showToast('New experience form opened','info')">+ Add</button>
+              </div>
+              <div class="work-grid">
+                <div class="work-card" style="--wc-bg:#dbeafe;--wc-color:#3b82f6">
+                  <div class="work-tags">
+                    <span style="background:#3b82f620;color:#3b82f6">React</span>
+                    <span style="background:#3b82f620;color:#3b82f6">Node.js</span>
+                    <span style="background:#3b82f620;color:#3b82f6">CSS</span>
+                  </div>
+                  <h4>Web Development</h4>
+                  <p class="work-years"></p>
+                  <button class="btn-work" style="background:#3b82f6" onclick="openExpModal('Web Development','Built 20+ responsive websites and web apps for US clients.','2020\u2013Present',['React','Node.js','CSS'],'#3b82f6')">View more</button>
+                </div>
+                <div class="work-card" style="--wc-bg:#ede9fe;--wc-color:#8b5cf6">
+                  <div class="work-tags">
+                    <span style="background:#8b5cf620;color:#8b5cf6">Figma</span>
+                    <span style="background:#8b5cf620;color:#8b5cf6">Adobe XD</span>
+                    <span style="background:#8b5cf620;color:#8b5cf6">UI</span>
+                  </div>
+                  <h4>Amazon Brand UI Kit Design</h4>
+                  <p class="work-years"></p>
+                  <button class="btn-work" style="background:#8b5cf6" onclick="openExpModal('Amazon Brand UI Kit Design','Designed comprehensive brand UI kits for Amazon seller storefronts.','2021\u20132023',['Figma','Adobe XD','UI'],'#8b5cf6')">View more</button>
+                </div>
+                <div class="work-card" style="--wc-bg:#ffedd5;--wc-color:#f97316">
+                  <div class="work-tags">
+                    <span style="background:#f9731620;color:#f97316">Flutter</span>
+                    <span style="background:#f9731620;color:#f97316">Firebase</span>
+                    <span style="background:#f9731620;color:#f97316">UX</span>
+                  </div>
+                  <h4>Mobile App Design &amp; Auth</h4>
+                  <p class="work-years"></p>
+                  <button class="btn-work" style="background:#f97316" onclick="openExpModal('Mobile App Design &amp; Auth','Crafted end-to-end mobile UX with secure authentication flows.','2022\u2013Present',['Flutter','Firebase','UX'],'#f97316')">View more</button>
+                </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SERVICE PACKAGES -->
+            <div class="section">
+              <div class="section-header">
+                <h3>Service Packages</h3>
+              </div>
+              <div class="packages-grid">
+                <div class="pkg-card" style="background:#fce7f3">
+                  <div class="pkg-top">
+                    <div>
+                      <p class="pkg-price">$14.5<span>/pkg</span></p>
+                      <p class="pkg-name">Pro Plan</p>
+                      <p class="pkg-desc">Full creative Designer/Web Developer service with priority support and unlimited revisions.</p>
+                      <div class="pkg-btns">
+                        <button class="btn-primary sm" onclick="openPayModal('Pro Plan','$14.5','#fce7f3')">Pay Now</button>
+                        <button class="btn-soft sm" onclick="showToast('Pro Plan details viewed','info')">Details</button>
+                      </div>
+                    </div>
+                    <div class="pkg-emoji"></div>
+                  </div>
+                </div>
+                <div class="pkg-card" style="background:#fef3c7">
+                  <div class="pkg-top">
+                    <div>
+                      <p class="pkg-price">$3.5<span></span></p>
+                      <p class="pkg-name">Standard</p>
+                      <p class="pkg-desc">Intuitive Designer/Web Developer service for small projects and quick turnarounds.</p>
+                      <div class="pkg-btns">
+                        <button class="btn-primary sm" onclick="openPayModal('Standard','$3.5','\ud83d\udcbb','#fef3c7')">Pay Now</button>
+                        <button class="btn-soft sm" onclick="showToast('Standard details viewed','info')">Details</button>
+                      </div>
+                    </div>
+                    <div class="pkg-emoji"></div>
+                  </div>
+                </div>
+                <div class="pkg-card" style="background:#e0f2fe">
+                  <div class="pkg-top">
+                    <div>
+                      <p class="pkg-price">$205<span></span></p>
+                      <p class="pkg-name">Boost</p>
+                      <p class="pkg-desc">Premium end-to-end solution with dedicated manager and full analytics.</p>
+                      <div class="pkg-btns">
+                        <button class="btn-primary sm" onclick="openPayModal('Boost','$205','#e0f2fe')">Pay Now</button>
+                        <button class="btn-soft sm" onclick="showToast('Boost details viewed','info')">Details</button>
+                      </div>
+                    </div>
+                    <div class="pkg-emoji"></div>
+                  </div>
+                </div>
+
+                <!-- PAYMENT HISTORY MINI -->
+                <div class="pkg-card" style="background:#fff">
+                  <div class="mini-pay-header">
+                    <p class="pkg-name">Payment History</p>
+                    <button class="link-btn" onclick="setNav(document.querySelector('[data-panel=payments]'),'payments')">See all</button>
+                  </div>
+                  <div class="pay-item" onclick="showToast('TechCorp Web Dev Phase 1: $1,200','info')">
+                    <div class="pay-item-top"><span>TechCorp  Web Dev Phase 1</span><span class="pay-status received">Received</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width:100%;background:#10b981"></div></div>
+                  </div>
+                  <div class="pay-item" onclick="showToast('NovaBrand Mobile \u2013 App Redesign: $500','info')">
+                    <div class="pay-item-top"><span>NovaBrand Mobile App Redesign</span><span class="pay-status received">Received</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width:100%;background:#10b981"></div></div>
+                  </div>
+                  <div class="pay-item" onclick="showToast('CreativeCo Branding Package: $300','info')">
+                    <div class="pay-item-top"><span>CreativeCo Branding Package</span><span class="pay-status pending">Pending</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width:60%;background:#f59e0b">
+                    </div>
+                  </div>
+                </div>
+                <script src="/TEAM MOMENT/dashboard.js"> </script>
+</body>
+</html>

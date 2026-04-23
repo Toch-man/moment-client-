@@ -1,0 +1,155 @@
+:root {
+  --teal-primary: #008080;
+  --bg-light: #f4f7f6;
+  --white: #ffffff;
+  --text-dark: #333;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* TOPBAR STYLING */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 70px;
+  background-color: var(--teal-primary);
+  color: white;
+  position: sticky; /* Keeps it at the top */
+  top: 0;
+  z-index: 100; /* Ensures it stays above all main content */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo { 
+  cursor: pointer; 
+  font-weight: bold; 
+  font-size: 1.2rem; 
+}
+
+.search-input {
+  width: 400px;
+  padding: 8px 15px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* AVATAR FIX */
+.profile-card .profile-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: white;
+  overflow: hidden;/* Clips the image to a circle */
+  position: relative;
+  margin-top: -50px; /* Pulls the avatar up to overlap the banner */
+  margin-left: 20px;
+  border: 4px solid rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
+}
+
+.profile-card .profile-avatar .img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This makes the image fit without stretching */
+  display: block;
+
+}
+
+.profile-banner {
+  position: relative;
+  z-index: 1;
+  height: 120px;
+  background-color: (#008080);
+}
+
+/* LAYOUT BODY */
+.app-body {
+  display: flex;
+  flex: 1;
+  background-color: var(--bg-light);
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 260px;
+  background: var(--white);
+  border-right: 1px solid #ddd;
+  padding: 20px;
+}
+
+.nav-btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 5px;
+  text-align: left;
+  border: none;
+  background: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-btn.active {
+  background-color: var(--teal-primary);
+  color: white;
+}
+
+/* MAIN CONTENT AREA */
+.main-content {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+.profile-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.profile-banner {
+  height: 100px;
+  background: linear-gradient(45deg, #008080, #00b3b3);
+}
+
+.profile-body { padding: 20px; }
+
+.btn-primary {
+  background: var(--white);
+  color: var(--teal-primary);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-primary-sm {
+  background: var(--teal-primary);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Professional Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+
+    <div class="flex min-h-screen">
+        <aside class="w-64 bg-white border-r hidden md:block">
+            <div class="p-6 flex items-center gap-2">
+                <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <span class="font-bold text-xl">Moment</span>
+            </div>
+
+            <nav class="mt-4 px-4">
+                <div class="mb-4">
+                    <button class="w-full flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-xl transition">
+                        <i class="fas fa-th-large"></i> My Dashboard
+                    </button>
+                    <button class="w-full flex items-center gap-3 px-4 py-3 bg-blue-700 text-white rounded-xl shadow-lg">
+                        <i class="fas fa-briefcase"></i> My Projects
+                    </button>
+                </div>
+                
+                <ul class="space-y-1 text-sm text-gray-500">
+                    <li><a href="#" class="block px-4 py-2 hover:text-blue-600 transition">Upcoming bookings</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:text-blue-600 transition">Revenue summary</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:text-blue-600 transition">Messages</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:text-blue-600 transition">New requests</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:text-blue-600 transition">Performance stats</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:text-blue-600 transition">Task Lists</a></li>
+                </ul>
+            </nav>
+
+            <div class="m-6 p-4 bg-blue-50 rounded-2xl border border-blue-100 text-center">
+                <img src="https://via.placeholder.com/60" alt="Upgrade" class="mx-auto mb-2">
+                <p class="text-xs text-blue-800 mb-3">Upgrade to PRO to be more visible and gain more gigs</p>
+                <button class="w-full bg-blue-600 text-white text-xs py-2 rounded-lg font-bold">Upgrade Now</button>
+            </div>
+        </aside>
+
+        <main class="flex-1 p-4 lg:p-8">
+            <header class="flex flex-col md:flex-row justify-between items-center gap-4 mb-8">
+                <div class="relative w-full max-w-xl">
+                    <input type="text" placeholder="Search for Projects, tasks, payments..." class="w-full pl-10 pr-4 py-2 rounded-full border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white">
+                    <i class="fas fa-search absolute left-4 top-3 text-gray-400"></i>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button class="bg-blue-700 text-white px-6 py-2 rounded-full font-medium">+ Add New Tasks</button>
+                    <div class="w-10 h-10 rounded-full bg-gray-200 overflow-hidden border">
+                        <img src="https://i.pravatar.cc/100" alt="Admin">
+                    </div>
+                </div>
+            </header>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                <div class="lg:col-span-2 space-y-8">
+                    
+                    <section class="flex flex-col md:flex-row items-center md:items-start gap-6">
+                        <div class="w-16 h-16 rounded-full bg-gray-200 overflow-hidden border">
+                            <img src="https://i.pravatar.cc/100" alt="Admin">
+                        </div>
+                        <div>
+                            <h1 class="text-2xl font-bold">Welcome back, Stanley!</h1>
+                            <p class="text-gray-500">Here's what's happening with your projects today.</p>
+                        </div>
+                    </section>
+                    <div class="relative">
+                            <div class="w-24 h-24 rounded-full border-4 border-green-400 p-1">
+                                <img src="/TEAM MOMENT/image.png" class="rounded-full w-full h-full object-cover">
+                            </div>
+                        </div>
+                        <div>
+                            <h1 class="text-2xl font-bold">Hello Stanley,</h1>
+                            <p class="text-gray-500 text-sm mb-2">A creative Designer/Web Developer <br> Los Angeles, California</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-gray-200 rounded text-xs">UI Design</span>
+                                <span class="px-3 py-1 bg-gray-200 rounded text-xs">HTML</span>
+                                <span class="px-3 py-1 bg-gray-200 rounded text-xs">CSS</span>
+                                <span class="px-3 py-1 bg-gray-200 rounded text-xs">JavaScript</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2 class="font-bold mb-4">Work Experiences</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="bg-blue-400 p-6 rounded-2xl text-white relative h-32">
+                                <h3 class="font-bold text-sm">Web<br>Development</h3>
+                                <button class="absolute bottom-4 right-4 text-xs bg-white/20 px-2 py-1 rounded">View more →</button>
+                            </div>
+                            <div class="bg-pink-400 p-6 rounded-2xl text-white relative h-32">
+                                <h3 class="font-bold text-sm">Amazon Brand<br>UI Kit Design</h3>
+                                <button class="absolute bottom-4 right-4 text-xs bg-white/20 px-2 py-1 rounded">View more →</button>
+                            </div>
+                            <div class="bg-orange-500 p-6 rounded-2xl text-white relative h-32">
+                                <h3 class="font-bold text-sm">Mobile App<br>Design and Authen</h3>
+                                <button class="absolute bottom-4 right-4 text-xs bg-white/20 px-2 py-1 rounded">View more →</button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2 class="font-bold mb-4">Service Packages</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-white p-4 rounded-2xl border flex justify-between items-center">
+                                <div>
+                                    <span class="text-xl font-bold">$14.5</span>
+                                    <h4 class="font-bold text-sm mt-1">Pro Plan</h4>
+                                    <p class="text-[10px] text-gray-400 max-w-[150px]">Includes advanced UI tools and premium support.</p>
+                                    <button class="mt-2 text-[10px] bg-blue-600 text-white px-3 py-1 rounded">Pay Now</button>
+                                </div>
+                                <i class="fas fa-credit-card text-3xl text-orange-400"></i>
+                            </div>
+                            <div class="bg-white p-4 rounded-2xl border flex justify-between items-center">
+                                <div>
+                                    <span class="text-xl font-bold">$9.5</span>
+                                    <h4 class="font-bold text-sm mt-1">Standard</h4>
+                                    <p class="text-[10px] text-gray-400 max-w-[150px]">Basic components and essential features.</p>
+                                    <button class="mt-2 text-[10px] bg-blue-600 text-white px-3 py-1 rounded">Pay Now</button>
+                                </div>
+                                <i class="fas fa-wallet text-3xl text-yellow-400"></i>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <aside class="space-y-8">
+                    <div class="bg-white p-4 rounded-2xl border">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="font-bold text-sm">Oct 2026</span>
+                            <div class="space-x-2 text-xs">
+                                <i class="fas fa-chevron-left"></i>
+                                <i class="fas fa-chevron-right"></i>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-7 gap-1 text-center text-[10px]">
+                            <span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span><span>Su</span>
+                            <span class="py-1 text-gray-300">23</span><span class="py-1 text-gray-300">24</span>
+                            <span class="py-1 bg-black text-white rounded">25</span>
+                            </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between mb-4">
+                            <h2 class="font-bold text-sm">Recruiters Online</h2>
+                            <a href="#" class="text-blue-500 text-[10px]">See all</a>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3">
+                                <img src="https://i.pravatar.cc/50?u=1" class="w-8 h-8 rounded-full">
+                                <div class="flex-1"><p class="text-xs font-bold">Mark Stanley</p><p class="text-[10px] text-gray-400">Creative Designer</p></div>
+                                <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <img src="https://i.pravatar.cc/50?u=2" class="w-8 h-8 rounded-full">
+                                <div class="flex-1"><p class="text-xs font-bold">Pearl Isabella</p><p class="text-[10px] text-gray-400">UI/UX Lead</p></div>
+                                <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>
