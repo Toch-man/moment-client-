@@ -1,197 +1,100 @@
 "use client";
-import Image from "next/image";
-import { useState } from "react";
-const Footer = () => {
-  const [email, set_email] = useState("");
 
+const Footer = () => {
   return (
-    <div
-      className="w-full"
-      style={{
-        backgroundImage: "url('/footer_background.png')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      <div className="flex flex-col justify-center items-center p-20">
-        <div className="flex flex-col justify-center items-center border-2 border-white rounded-2xl p-10">
-          <p className="text-white text-center font-extrabold text-4xl mb-10">
-            Have an idea? Let's Handle it for you
-            <br />
-            <span className="text-center font-light text-white text-xl">
-              service quality while empowering media professionals with tools to
-              <br />
-              manage their bookings and client relationships.
-            </span>
+    <footer className="bg-black text-white px-6 sm:px-10 md:px-20 py-12">
+      {/* TOP CONTENT */}
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-10">
+        {/* LEFT */}
+        <div className="flex flex-col gap-3 max-w-sm">
+          <div className="flex items-center gap-2">
+            <img src="/images/logo.png" alt="logo" className="w-8 h-8" />
+            <h1 className="text-2xl sm:text-3xl font-bold tracking-wider">
+              M<span className="text-[#E2C37F]">o</span>ment
+            </h1>
+          </div>
+
+          <p className="text-sm text-gray-300 leading-relaxed">
+            Reprehenderit aenean occaecati fugit, orci sodales culpa
+            perspiciatis optio condimentum laboris hendrerit.
           </p>
-          <button className="text-white px-10 py-2 text-xl font-extrabold bg-[#5D5FEF]">
-            Let's chat
-          </button>
         </div>
 
-        <div className="flex flex-row gap-25 p-15">
-          <div>
-            <h1 className="text-white text-center text-xl font-bold">
-              Newsletter Subscription
-            </h1>
-            <form>
-              <input
-                className="w-87.5 h-9 bg-white p-3 my-10"
-                placeholder="enter email.."
-                value={email}
-                onChange={(e) => set_email(e.target.value)}
-              />
-              <button
-                className="w-87.5 h-9 text-white text-xl bg-blue-600 font-extrabold"
-                type="submit"
-              >
-                Subscribe
-              </button>
-            </form>
-          </div>
+        {/* RIGHT LINKS */}
+        <div className="flex flex-col sm:flex-row gap-10 sm:gap-20">
+          {/* COMPANY */}
           <div className="flex flex-col gap-3">
-            <h1 className="text-xl font-bold text-white">Quick links</h1>
-            <p className="text-base font-light text-nowrap text-white">Home</p>
-            <p className="text-base font-light text-nowrap text-white">
-              Features
-            </p>
-            <p className="text-base font-light text-nowrap text-white">
-              How it works
-            </p>
-            <p className="text-base font-light text-nowrap text-white">
-              Testimonials
-            </p>
-            <p className="text-base font-light text-nowrap text-white">Blog</p>
-            <p className="text-base font-light text-nowrap text-white">
-              Download app
-            </p>
-          </div>
-          <div className="flex flex-col gap-3">
-            <h1 className="text-xl font-bold text-white">Products</h1>
-            <p className="text-base font-light text-nowrap text-white">
-              Graphics Design
-            </p>
-            <p className="text-base font-light text-nowrap text-white">
-              Video Editing
-            </p>
-            <p className="text-base font-light text-nowrap text-white">
-              Content Creation
-            </p>
-            <p className="text-base font-light text-nowrap text-white">
-              Web Design/Dev
-            </p>
-            <p className="text-base font-light text-nowrap text-white">
-              SM Management
-            </p>
-            <p className="text-base font-light text-nowrap text-white">
-              Download app
-            </p>
-          </div>
-          <div className="flex flex-col gap-3">
-            <h1 className="text-xl font-bold text-white">Company</h1>
-            <p className="text-base font-light text-nowrap text-white">
+            <h2 className="text-lg font-semibold">Company</h2>
+            <p className="text-gray-300 hover:text-white cursor-pointer">
               About us
             </p>
-            <p className="text-base font-light text-nowrap text-white">
+            <p className="text-gray-300 hover:text-white cursor-pointer">
               Careers
             </p>
-            <p className="text-base font-light text-nowrap text-white">Press</p>
-            <p className="text-base font-light text-nowrap text-white">
-              Partners
-            </p>
-            <p className="text-base font-light text-nowrap text-white">
+            <p className="text-gray-300 hover:text-white cursor-pointer">
               Contact
             </p>
           </div>
-          <div className="flex flex-col gap-3">
-            <h1 className="text-xl font-bold text-white">Resources</h1>
-            <p className="text-base font-light text-nowrap text-white">
-              Help Center
-            </p>
-            <p className="text-base font-light text-nowrap text-white">
-              Community
-            </p>
-            <p className="text-base font-light text-nowrap text-white">
-              Productivity Guides
-            </p>
-            <p className="text-base font-light text-nowrap text-white">
-              Privacy Policy
-            </p>
-            <p className="text-base font-light text-nowrap text-white">
-              Terms of Service
-            </p>
-            <p className="text-base font-light text-nowrap text-white">
-              Security
-            </p>
-          </div>
-        </div>
 
-        <div className="flex flex-col justify-center items-center gap-3 mt-10">
-          <h1 className="text-xl font-light text-nowrap text-white">
-            Follow us here
-          </h1>
-          <div className="flex flex-row gap-5 justify-center items-center ">
-            <svg
-              width="40"
-              height="40"
-              viewBox="0 0 40 40"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+          {/* LINKS */}
+          <div className="flex flex-col gap-3">
+            <h2 className="text-lg font-semibold">Quick Links</h2>
+            <p
+              onClick={() =>
+                document
+                  .getElementById("home")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+              className="cursor-pointer"
             >
-              <path
-                d="M22.0571 0C24.3071 0.006 25.4491 0.018 26.4351 0.046L26.8231 0.0599999C27.2711 0.0759999 27.7131 0.0959999 28.2471 0.12C30.3751 0.22 31.8271 0.556 33.1011 1.05C34.4211 1.558 35.5331 2.246 36.6451 3.356C37.6625 4.35546 38.4495 5.56494 38.9511 6.9C39.4451 8.174 39.7811 9.626 39.8811 11.756C39.9051 12.288 39.9251 12.73 39.9411 13.18L39.9531 13.568C39.9831 14.552 39.9951 15.694 39.9991 17.944L40.0011 19.436V22.056C40.006 23.5148 39.9907 24.9736 39.9551 26.432L39.9431 26.82C39.9271 27.27 39.9071 27.712 39.8831 28.244C39.7831 30.374 39.4431 31.824 38.9511 33.1C38.4495 34.4351 37.6625 35.6445 36.6451 36.644C35.6457 37.6614 34.4362 38.4484 33.1011 38.95C31.8271 39.444 30.3751 39.78 28.2471 39.88L26.8231 39.94L26.4351 39.952C25.4491 39.98 24.3071 39.994 22.0571 39.998L20.5651 40H17.9471C16.4877 40.0051 15.0282 39.9898 13.5691 39.954L13.1811 39.942C12.7064 39.924 12.2317 39.9034 11.7571 39.88C9.62914 39.78 8.17714 39.444 6.90114 38.95C5.5668 38.4481 4.35802 37.6611 3.35914 36.644C2.34103 35.6447 1.55336 34.4352 1.05114 33.1C0.557138 31.826 0.221137 30.374 0.121137 28.244L0.0611375 26.82L0.0511378 26.432C0.0142699 24.9736 -0.00239859 23.5148 0.00113759 22.056V17.944C-0.0043982 16.4852 0.01027 15.0264 0.0451377 13.568L0.0591377 13.18C0.0751377 12.73 0.0951376 12.288 0.119138 11.756C0.219138 9.626 0.555138 8.176 1.04914 6.9C1.55253 5.5644 2.34158 4.35487 3.36114 3.356C4.35944 2.3391 5.56751 1.55215 6.90114 1.05C8.17714 0.556 9.62714 0.22 11.7571 0.12C12.2891 0.0959999 12.7331 0.0759999 13.1811 0.0599999L13.5691 0.0479999C15.0275 0.0124654 16.4863 -0.0028694 17.9451 0.00199986L22.0571 0ZM20.0011 10C17.349 10 14.8054 11.0536 12.9301 12.9289C11.0547 14.8043 10.0011 17.3478 10.0011 20C10.0011 22.6522 11.0547 25.1957 12.9301 27.0711C14.8054 28.9464 17.349 30 20.0011 30C22.6533 30 25.1968 28.9464 27.0722 27.0711C28.9476 25.1957 30.0011 22.6522 30.0011 20C30.0011 17.3478 28.9476 14.8043 27.0722 12.9289C25.1968 11.0536 22.6533 10 20.0011 10ZM20.0011 14C20.7891 13.9999 21.5693 14.1549 22.2973 14.4563C23.0253 14.7577 23.6868 15.1996 24.2441 15.7567C24.8013 16.3137 25.2434 16.9751 25.545 17.703C25.8467 18.4309 26.002 19.2111 26.0021 19.999C26.0023 20.7869 25.8472 21.5672 25.5458 22.2952C25.2444 23.0232 24.8025 23.6847 24.2455 24.2419C23.6884 24.7992 23.0271 25.2412 22.2992 25.5429C21.5713 25.8445 20.7911 25.9999 20.0031 26C18.4118 26 16.8857 25.3679 15.7605 24.2426C14.6353 23.1174 14.0031 21.5913 14.0031 20C14.0031 18.4087 14.6353 16.8826 15.7605 15.7574C16.8857 14.6321 18.4118 14 20.0031 14M30.5031 7C29.8401 7 29.2042 7.26339 28.7354 7.73223C28.2665 8.20107 28.0031 8.83696 28.0031 9.5C28.0031 10.163 28.2665 10.7989 28.7354 11.2678C29.2042 11.7366 29.8401 12 30.5031 12C31.1662 12 31.8021 11.7366 32.2709 11.2678C32.7397 10.7989 33.0031 10.163 33.0031 9.5C33.0031 8.83696 32.7397 8.20107 32.2709 7.73223C31.8021 7.26339 31.1662 7 30.5031 7Z"
-                fill="#2563EB"
-              />
-            </svg>
-            <svg
-              width="48"
-              height="48"
-              viewBox="0 0 48 48"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+              Home
+            </p>
+
+            <p
+              onClick={() =>
+                document
+                  .getElementById("features")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+              className="cursor-pointer"
             >
-              <path
-                d="M43.9999 24.1599C43.9766 29.0704 42.1476 33.8007 38.8613 37.4496C35.5751 41.0984 31.0612 43.4107 26.1799 43.9459V29.5999H30.8799C31.0868 29.6011 31.2868 29.5264 31.4423 29.39C31.5979 29.2537 31.698 29.0651 31.7239 28.8599L32.2319 24.4559C32.2503 24.3403 32.2432 24.222 32.2111 24.1094C32.179 23.9968 32.1227 23.8926 32.0461 23.804C31.9695 23.7155 31.8745 23.6447 31.7678 23.5966C31.661 23.5486 31.545 23.5245 31.4279 23.5259H26.1799V19.9259C26.1799 18.2539 26.6459 17.1119 29.0359 17.1119H31.2599C31.4808 17.1062 31.6907 17.0142 31.8447 16.8558C31.9987 16.6973 32.0845 16.4849 32.0839 16.2639V12.4759C32.0787 12.255 31.9873 12.0449 31.8292 11.8906C31.6711 11.7362 31.4589 11.6498 31.2379 11.6499H27.6399C26.6293 11.5776 25.615 11.7268 24.668 12.0869C23.7209 12.4471 22.8638 13.0096 22.1566 13.7351C21.4493 14.4607 20.9089 15.3318 20.573 16.2878C20.2371 17.2437 20.1139 18.2614 20.2119 19.2699V23.5019H16.6779C16.5676 23.5019 16.4584 23.5239 16.3567 23.5668C16.255 23.6097 16.1629 23.6725 16.086 23.7516C16.009 23.8306 15.9486 23.9243 15.9084 24.0271C15.8682 24.1298 15.849 24.2396 15.8519 24.3499V28.7499C15.8519 28.969 15.939 29.1791 16.0939 29.334C16.2488 29.4889 16.4589 29.5759 16.6779 29.5759H20.2119V43.6499C15.6739 42.7747 11.579 40.3548 8.62346 36.8017C5.66792 33.2485 4.03416 28.7815 3.99994 24.1599C3.99994 18.8556 6.10708 13.7685 9.8578 10.0178C13.6085 6.26705 18.6956 4.15991 23.9999 4.15991C29.3043 4.15991 34.3913 6.26705 38.1421 10.0178C41.8928 13.7685 43.9999 18.8556 43.9999 24.1599Z"
-                fill="#2563EB"
-              />
-            </svg>
-            <svg
-              width="48"
-              height="48"
-              viewBox="0 0 48 48"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+              Features
+            </p>
+
+            <p
+              onClick={() =>
+                document
+                  .getElementById("how")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+              className="cursor-pointer"
             >
-              <path
-                d="M43.9369 13.035C43.7602 12.3438 43.4217 11.7045 42.9493 11.1698C42.4769 10.6352 41.8842 10.2205 41.22 9.96001C34.7925 7.47751 24.5625 7.50001 24 7.50001C23.4375 7.50001 13.2075 7.47751 6.78 9.96001C6.11581 10.2205 5.52306 10.6352 5.05068 11.1698C4.57829 11.7045 4.2398 12.3438 4.06313 13.035C3.5775 14.9063 3 18.3263 3 24C3 29.6738 3.5775 33.0938 4.06313 34.965C4.23953 35.6566 4.57791 36.2963 5.05031 36.8313C5.52271 37.3663 6.11559 37.7812 6.78 38.0419C12.9375 40.4175 22.575 40.5 23.8762 40.5H24.1238C25.425 40.5 35.0681 40.4175 41.22 38.0419C41.8844 37.7812 42.4773 37.3663 42.9497 36.8313C43.4221 36.2963 43.7605 35.6566 43.9369 34.965C44.4225 33.09 45 29.6738 45 24C45 18.3263 44.4225 14.9063 43.9369 13.035ZM30.1106 25.2225L22.6106 30.4725C22.3863 30.6297 22.1232 30.7224 21.8498 30.7406C21.5765 30.7589 21.3034 30.7019 21.0602 30.576C20.8169 30.45 20.6128 30.2598 20.47 30.0261C20.3272 29.7923 20.2511 29.5239 20.25 29.25V18.75C20.2501 18.4756 20.3254 18.2065 20.4678 17.9719C20.6103 17.7374 20.8143 17.5464 21.0577 17.4197C21.3011 17.2931 21.5746 17.2357 21.8484 17.2537C22.1223 17.2717 22.3859 17.3644 22.6106 17.5219L30.1106 22.7719C30.3079 22.9102 30.469 23.0941 30.5802 23.3079C30.6913 23.5216 30.7494 23.759 30.7494 24C30.7494 24.241 30.6913 24.4784 30.5802 24.6922C30.469 24.9059 30.3079 25.0898 30.1106 25.2281V25.2225Z"
-                fill="#2563EB"
-              />
-            </svg>
-            <svg
-              width="48"
-              height="48"
-              viewBox="0 0 48 48"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+              How it Works
+            </p>
+
+            <p
+              onClick={() =>
+                document
+                  .getElementById("creatives")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+              className="cursor-pointer"
             >
-              <g clipPath="url(#clip0_3603_495)">
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M12.5383 1.62861C16.2205 1.21718 20.064 0.857178 24 0.857178C27.936 0.857178 31.7794 1.21718 35.4617 1.62861C38.2605 1.94952 40.8675 3.21045 42.8567 5.20524C44.8459 7.20003 46.0995 9.81067 46.4125 12.6103C46.8068 16.2755 47.1428 20.0915 47.1428 24C47.1428 27.9086 46.8068 31.7246 46.4125 35.3897C46.0995 38.1894 44.8459 40.8 42.8567 42.7948C40.8675 44.7896 38.2605 46.0505 35.4617 46.3715C31.7794 46.7829 27.936 47.1429 24 47.1429C20.064 47.1429 16.2205 46.7829 12.5383 46.3715C9.7395 46.0505 7.1324 44.7896 5.14322 42.7948C3.15403 40.8 1.90044 38.1894 1.5874 35.3897C1.19312 31.7246 0.857117 27.9086 0.857117 24C0.857117 20.0915 1.19312 16.2755 1.5874 12.6103C1.90044 9.81067 3.15403 7.20003 5.14322 5.20524C7.1324 3.21045 9.7395 1.94952 12.5383 1.62861ZM28.5668 9.88118C28.4485 9.36817 28.1454 8.91669 27.7154 8.61287C27.2854 8.30905 26.7586 8.17416 26.2356 8.23393C25.7125 8.2937 25.2297 8.54395 24.8793 8.93693C24.529 9.32991 24.3356 9.83812 24.336 10.3646V30.1715C24.336 31.2239 24.0239 32.2527 23.4392 33.1277C22.8545 34.0028 22.0235 34.6848 21.0511 35.0876C20.0788 35.4903 19.0089 35.5957 17.9767 35.3904C16.9445 35.185 15.9964 34.6783 15.2522 33.9341C14.508 33.1899 14.0013 32.2418 13.7959 31.2096C13.5906 30.1774 13.696 29.1075 14.0987 28.1352C14.5015 27.1628 15.1835 26.3318 16.0586 25.7471C16.9336 25.1624 17.9624 24.8503 19.0148 24.8503C19.5832 24.8503 20.1282 24.6246 20.5301 24.2227C20.9319 23.8208 21.1577 23.2758 21.1577 22.7075C21.1577 22.1391 20.9319 21.5941 20.5301 21.1922C20.1282 20.7904 19.5832 20.5646 19.0148 20.5646C17.1148 20.5646 15.2574 21.128 13.6775 22.1837C12.0977 23.2393 10.8664 24.7397 10.1393 26.4951C9.41213 28.2505 9.22188 30.1821 9.59257 32.0457C9.96325 33.9092 10.8782 35.621 12.2218 36.9645C13.5653 38.3081 15.2771 39.223 17.1406 39.5937C19.0042 39.9644 20.9358 39.7742 22.6912 39.047C24.4466 38.3199 25.947 37.0886 27.0026 35.5087C28.0583 33.9289 28.6217 32.0715 28.6217 30.1715V18.2057C30.6788 19.9543 33.3325 20.9143 36.4457 20.9143C37.014 20.9143 37.5591 20.6886 37.9609 20.2867C38.3628 19.8848 38.5885 19.3398 38.5885 18.7715C38.5885 18.2031 38.3628 17.6581 37.9609 17.2562C37.5591 16.8544 37.014 16.6286 36.4457 16.6286C34.1828 16.6286 32.5028 15.9292 31.2651 14.8286C30.0034 13.704 29.0674 12.0309 28.5668 9.88118Z"
-                  fill="#2563EB"
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0_3603_495">
-                  <rect width="48" height="48" fill="white" />
-                </clipPath>
-              </defs>
-            </svg>
+              Testimonials
+            </p>
           </div>
         </div>
       </div>
-    </div>
+
+      {/* DIVIDER LINE */}
+      <div className="max-w-6xl mx-auto mt-10">
+        <hr className="border-t border-[#E2C37F]/40" />
+      </div>
+
+      <p className="text-center text-gray-400 text-sm mt-6">
+        © {new Date().getFullYear()} Moment. All rights reserved.
+      </p>
+    </footer>
   );
 };
 

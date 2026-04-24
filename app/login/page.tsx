@@ -1,12 +1,16 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import InputField from "@/app/components/InputField";
 import LoginSuccessModal from "@/app/components/LoginSuccessModal";
 import ErrorModal from "@/app/components/ErrorModal";
 import Link from "next/link";
+import { loginUser } from "@/libs/api";
 
 export default function LoginPage() {
+  const router = useRouter();
+
   const [form, setForm] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
   const [showError, setShowError] = useState(false);
@@ -16,8 +20,12 @@ export default function LoginPage() {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
-  function handleLogin() {
-    const storedUser = JSON.parse(localStorage.getItem("user") || "{}");
+  async function handleLogin() {
+    if (!form.email || !form.password) {
+      setError("All fields are required");
+      setShowError(true);
+      return;
+    }
 
     if (!form.email.includes("@")) {
       setError("Invalid email format");
@@ -25,37 +33,36 @@ export default function LoginPage() {
       return;
     }
 
-    if (
-      form.email === storedUser.email &&
-      form.password === storedUser.password
-    ) {
-      setShowSuccess(true);
+    try {
+      const res = await loginUser({
+        email: form.email,
+        password: form.password,
+      });
 
-      setTimeout(() => {
-        window.location.href = "/dashboard";
-      }, 2000);
-    } else {
-      setError("Invalid credentials");
+      if (res?.token || res?.access_token) {
+        localStorage.setItem("access_token", res.token || res.access_token);
+
+        setShowSuccess(true);
+
+        window.location.href = "/TEAM MOMENT/dashboard.html";
+      } else {
+        setError(res?.message || "Invalid credentials");
+        setShowError(true);
+      }
+    } catch (err) {
+      setError("Network error. Try again.");
       setShowError(true);
     }
   }
 
   return (
     <div className="min-h-screen flex flex-col md:flex-row">
-
-      {/* LEFT IMAGE */}
       <div className="hidden md:flex md:w-1/2 relative">
-        <img
-          src="/images/auth-bg.png"
-          className="w-full h-full object-cover"
-        />
+        <img src="/images/auth-bg.png" className="w-full h-full object-cover" />
       </div>
 
-      {/* RIGHT FORM */}
       <div className="w-full md:w-1/2 flex items-center justify-center bg-[#f7f8fa] px-4 sm:px-6 py-8">
-
         <div className="w-full max-w-md bg-white p-6 sm:p-8 rounded-2xl shadow-sm">
-
           <h2 className="text-xl sm:text-2xl font-semibold text-center text-black mb-6">
             WELCOME BACK
           </h2>
@@ -92,7 +99,6 @@ export default function LoginPage() {
               Sign Up
             </Link>
           </p>
-
         </div>
       </div>
 
